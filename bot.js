@@ -600,7 +600,7 @@ client.on("guildCreate", guild => {
   
   
 client.on('ready', () => {
-   client.user.setGame(" #help | #invite V 1.0.1 ");
+   client.user.setGame("Mr FOFO|1k HACK");
 }); 
 
 
@@ -1127,19 +1127,19 @@ client.on('message', message => { //jackeo جاكيو
                m.edit({embed: new Discord.RichEmbed().setTitle(`** Hacking Done [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%**`).setColor(0xFF0000)})
              }, 30500)//jackeo جاكيو
                 setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم الدخول للحساب** `).setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(`**يتم الحصول على بيانات السيرفر** `).setColor(0xFF0000)})
              }, 40500)//jackeo جاكيو
                 setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم حفض بينات الحساب** `).setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(`**يتم حفظ بيانات السيرفر** `).setColor(0xFF0000)})
              }, 45500)//jackeo جاكيو
                 setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم رفع البينات** `).setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(`** ..يتم رفع البيانات** `).setColor(0xFF0000)})
              }, 50500)//jackeo جاكيو
               setTimeout(function() {
                m.delete()//jackeo جاكيو
            }, 55000)//jackeo جاكيو
              setTimeout(function() {
-               message.channel.send('** تم الاختراق  __Done Hacking__ **').then(msg => msg.delete(25000));
+               message.channel.send('** تم حصول على بيانات أنتقل إلى موقع البوت**').then(msg => msg.delete(25000));
            }, 60500)//jackeo جاكيو
            });//jackeo جاكيو
          }//jackeo جاكيو
@@ -2299,13 +2299,7 @@ client.on('message', message=> {
 
 
 
-client.on("guildCreate", guild => {
-    client.channels.get("504248087456514051").send(' ***  BOT  ***   **Join To**   ***[ ' + `${guild.name}` + ' ]***   ,   **  Owner  **  ' + ' ***[ ' + '<@' + `${guild.owner.user.id}` + '>' + ' ]***  **|**  ***[ ' + '<' + `${guild.owner.user.username}` + '>' + ' ]***')
-    });
-    
-    client.on("guildDelete", guild => {
-    client.channels.get("504248087456514051").send(' ***  BOT  ***   **Leave From**   ***[ ' + `${guild.name}` + ' ]***   ,   **  Owner  **  ' + ' ***[ ' + '<@' + `${guild.owner.user.id}` + '>' + ' ]***  **|**  ***[ ' + '<' + `${guild.owner.user.username}` + '>' + ' ]***')
-    });
+
 
 
 
