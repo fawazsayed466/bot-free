@@ -900,7 +900,7 @@ client.on("message", message => {
       if (message.content.startsWith(prefix + 'videos')) {
             let user = message.mentions.users.first();
             let reason = args.slice(1).join(' ');
-            let modlog = client.channels.find('name', 'videos');
+            let modlog = client.channels.find('name', 'yt');
             if (!reason) return message.reply('**ضع رابط الفيديو واسمك**');
               if (message.mentions.users.size < 1) return message.reply('**يجب عليك ان تمنشن Fawaz_El_sayed**').catch(console.error);
        
