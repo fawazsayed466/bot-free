@@ -701,8 +701,10 @@ client.on('message', async message => {
 
 
 
+
+
 client.on('message', async message => {
-            if(message.content.includes('$setrole')){ 
+            if(message.content.includes('mtasa://')){ 
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
         if(!message.channel.guild) return;
         message.delete()
@@ -717,7 +719,6 @@ client.on('message', async message => {
         })
         message.guild.channels.forEach(async (channel, id) => {
           await channel.overwritePermissions(muterole, {
-            ADD_REACTIONS: false
           });
         });
       }catch(e){
@@ -727,20 +728,18 @@ client.on('message', async message => {
            if(!message.channel.guild) return message.reply('** This command only for servers**');
      message.member.addRole(muterole);
     const embed500 = new Discord.RichEmbed()
-      .setTitle("تم أعطاءك الرتبة بنجاح")
-            .addField(`SM`)
+      .setTitle("تم أعطاءك رتبة بنجاح")
+            .addField(`**تم تفعيلك!!!**` , `**ملاحظة: من الان يتم مراقبتك بعد تفعيل وشكرا لك**`)
             .setColor("c91616")
             .setThumbnail(`${message.author.avatarURL}`)
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
-     message.author.send('`تم أعطاءك الرتبة بنجاح`');
+     message.author.send('`تم تفعيلك بنجاح`');
    
        
     }
 })
-
-
 
 
 
