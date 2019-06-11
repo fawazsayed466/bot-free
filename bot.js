@@ -728,6 +728,8 @@ client.on('message', async message => {
      message.member.addRole(muterole);
     const embed500 = new Discord.RichEmbed()
       .setTitle("تم أعطاءك الرتبة بنجاح")
+            .addField(`SM`)
+            .setColor("c91616")
             .setThumbnail(`${message.author.avatarURL}`)
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
