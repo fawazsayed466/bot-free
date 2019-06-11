@@ -626,7 +626,7 @@ const secre = [
         if(!message.channel.guild) return;
         message.delete()
           var command = message.content.split(" ")[0];
-    let muterole = message.guild.roles.find(`name`, "Muted");
+    let muterole = message.guild.roles.find(`name`, "Mutedhs");
     if(!muterole){
       try{
         muterole = await message.guild.createRole({
@@ -647,14 +647,14 @@ const secre = [
            if(!message.channel.guild) return message.reply('** This command only for servers**');
      message.member.addRole(muterole);
     const embed500 = new Discord.RichEmbed()
-      .setTitle("Muted Ads")
-            .addField(`**  You Have Been Muted **` , `**Reason : Sharing Another Discord Link**`)
+      .setTitle("إنذار")
+            .addField(`**إرسال رابط سيرفر دسكورد**` , `**ملاحظة:اخر مرة ترسل رابط سيرفر او سوف نتوجه لأجرائات ثانية**`)
             .setColor("c91616")
             .setThumbnail(`${message.author.avatarURL}`)
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
-     message.author.send('` انت معاقب ميوت شاتي بسبب نشر سرفرات ان كان عن طريق الخطا **ف** تكلم مع الادارة `');
+     message.author.send('`لا ترسل رابط سيرفر مرة اخرا`');
    
        
     }
