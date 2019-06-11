@@ -661,6 +661,45 @@ const secre = [
 })
 
 
+client.on('message', async message => {
+            if(message.content.includes('mtasa://')){ 
+                if(message.member.hasPermission("MANAGE_GUILD")) return;
+        if(!message.channel.guild) return;
+        message.delete()
+          var command = message.content.split(" ")[0];
+    let muterole = message.guild.roles.find(`name`, "Mutedhs");
+    if(!muterole){
+      try{
+        muterole = await message.guild.createRole({
+          name: "Muted",
+          color: "#000000",
+          permissions:[]
+        })
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        });
+      }catch(e){
+        console.log(e.stack);
+      }
+    }
+           if(!message.channel.guild) return message.reply('** This command only for servers**');
+     message.member.addRole(muterole);
+    const embed500 = new Discord.RichEmbed()
+      .setTitle("إنذار")
+            .addField(`**إرسال رابط سيرفر mta sa**` , `**ملاحظة:اخر مرة ترسل رابط سيرفر او سوف نتوجه الى إجرائات ثانية**`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL)
+        .setFooter(`${message.guild.name} `)
+     message.channel.send(embed500)
+     message.author.send('`لا ترسل رابط سيرفر مرة اخرا`');
+   
+       
+    }
+})
 
 
 client.on("message", message => {
@@ -1495,7 +1534,45 @@ const Sra7a = [
 
 
 
-
+client.on('message', async message => {
+            if(message.content.includes('@everyone')){ 
+                if(message.member.hasPermission("MANAGE_GUILD")) return;
+        if(!message.channel.guild) return;
+        message.delete()
+          var command = message.content.split(" ")[0];
+    let muterole = message.guild.roles.find(`name`, "Mutedhs");
+    if(!muterole){
+      try{
+        muterole = await message.guild.createRole({
+          name: "Muted",
+          color: "#000000",
+          permissions:[]
+        })
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        });
+      }catch(e){
+        console.log(e.stack);
+      }
+    }
+           if(!message.channel.guild) return message.reply('** This command only for servers**');
+     message.member.addRole(muterole);
+    const embed500 = new Discord.RichEmbed()
+      .setTitle("إنذار")
+            .addField(`**إرسال منشن للكل في شات**` , `**ملاحظة:اخر مرة ترسل منشن للكل او سوف نتوجه لإجرائات ثانية**`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL)
+        .setFooter(`${message.guild.name} `)
+     message.channel.send(embed500)
+     message.author.send('`لا ترسل منشن مرة اخرى`');
+   
+       
+    }
+})
 
 
 
@@ -2652,7 +2729,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-   if(message.content.startsWith("#invites")) {
+   if(message.content.startsWith("#ines")) {
     message.guild.fetchInvites().then(invs => {
       let user = message.mentions.users.first() || message.author
       let personalInvites = invs.filter(i => i.inviter.id === user.id);
@@ -3054,7 +3131,7 @@ client.on("message", message => {
 
 client.on('guildMemberAdd', member => {
     const guild = member.guild;
-    guild.members.get(member.id).addRole(guild.roles.find('name', '❉-Only Games'));
+    guild.members.get(member.id).addRole(guild.roles.find('name', 'SM'));
 });
 
 
@@ -3218,7 +3295,7 @@ client.on('message', message => {
 
 
 client.on('message',async message => {
-    if(message.content.startsWith(prefix + "setVoice")) {
+    if(message.content.startsWith(prefix + "setvoice")) {
     if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('❌ **ليس لديك الصلاحيات الكافية**');
     if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('❌ **ليس معي الصلاحيات الكافية**');
     message.channel.send('✅| **تم عمل الروم بنجاح**');
@@ -3229,14 +3306,14 @@ client.on('message',async message => {
         SPEAK: false
       });
       setInterval(function() {
-        c.setName(`Voice Online : [ ${message.guild.members.filter(m => m.voiceChannel).size} ]`)
+        c.setName(`SM VOICE : [ ${message.guild.members.filter(m => m.voiceChannel).size} ]`)
       },1000);
     });
     }
   });
  
   client.on('message',async message => {
-    if(message.content.startsWith(prefix + "setCount")) {
+    if(message.content.startsWith(prefix + "setcount")) {
     if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('❌ **ليس لديك الصلاحيات الكافية**');
     if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('❌ **ليس معي الصلاحيات الكافية**');
     message.channel.send('✅| **تم عمل الروم بنجاح**');
@@ -3321,7 +3398,7 @@ client.on('message',async message => {
  
   client.on('message',async message => {
     var moment = require('moment');
-      if(message.content.startsWith(prefix + "setDays")) {
+      if(message.content.startsWith(prefix + "setdays")) {
       if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('❌ **ليس لديك الصلاحيات الكافية**');
       if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('❌ **ليس معي الصلاحيات الكافية**');
       message.channel.send('✅| **تم عمل الروم بنجاح**');
