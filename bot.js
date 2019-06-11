@@ -704,7 +704,7 @@ client.on('message', async message => {
 
 
 client.on('message', async message => {
-            if(message.content.includes('mtasa://')){ 
+            if(message.content.includes('تفعيل')){ 
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
         if(!message.channel.guild) return;
         message.delete()
