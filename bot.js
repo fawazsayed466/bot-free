@@ -69,7 +69,9 @@ client.on('ready',  () => {
 
 
 
-
+client.on('guildMemberAdd', member =>{
+    member.addRole(member.guild.roles.find(x => x.name === 'SM_RP'), "Auto-Role")
+});
                   
 
  
@@ -701,45 +703,6 @@ client.on('message', async message => {
 
 
 
-
-
-client.on('message', async message => {
-            if(message.content.includes('تفعيل')){ 
-                if(message.member.hasPermission("MANAGE_GUILD")) return;
-        if(!message.channel.guild) return;
-        message.delete()
-          var command = message.content.split(" ")[0];
-    let muterole = message.guild.roles.find(`name`, "SM");
-    if(!muterole){
-      try{
-        muterole = await message.guild.createRole({
-          name: "SM",
-          color: "#000000",
-          permissions:[]
-        })
-        message.guild.channels.forEach(async (channel, id) => {
-          await channel.overwritePermissions(muterole, {
-          });
-        });
-      }catch(e){
-        console.log(e.stack);
-      }
-    }
-           if(!message.channel.guild) return message.reply('** This command only for servers**');
-     message.member.addRole(muterole);
-    const embed500 = new Discord.RichEmbed()
-      .setTitle("تم أعطاءك رتبة بنجاح")
-            .addField(`**تم تفعيلك!!!**` , `**ملاحظة: من الان يتم مراقبتك بعد تفعيل وشكرا لك**`)
-            .setColor("c91616")
-            .setThumbnail(`${message.author.avatarURL}`)
-            .setAuthor(message.author.username, message.author.avatarURL)
-        .setFooter(`${message.guild.name} `)
-     message.channel.send(embed500)
-     message.author.send('`تم تفعيلك بنجاح`');
-   
-       
-    }
-})
 
 
 
