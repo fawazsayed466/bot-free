@@ -473,7 +473,7 @@ client.on("guildCreate", guild => {
   
   
 client.on('ready', () => {
-   client.user.setGame("SM_Bot<3");
+   client.user.setGame("SM BOT BY MrFoFo");
 }); 
 
 
@@ -626,17 +626,16 @@ const secre = [
         if(!message.channel.guild) return;
         message.delete()
           var command = message.content.split(" ")[0];
-    let muterole = message.guild.roles.find(`name`, "Mutedhs");
+    let muterole = message.guild.roles.find(`name`, "إنذار");
     if(!muterole){
       try{
         muterole = await message.guild.createRole({
-          name: "Muted",
+          name: "إنذار",
           color: "#000000",
           permissions:[]
         })
         message.guild.channels.forEach(async (channel, id) => {
           await channel.overwritePermissions(muterole, {
-            SEND_MESSAGES: false,
             ADD_REACTIONS: false
           });
         });
@@ -667,17 +666,16 @@ client.on('message', async message => {
         if(!message.channel.guild) return;
         message.delete()
           var command = message.content.split(" ")[0];
-    let muterole = message.guild.roles.find(`name`, "Mutedhs");
+    let muterole = message.guild.roles.find(`name`, "إنذار");
     if(!muterole){
       try{
         muterole = await message.guild.createRole({
-          name: "Muted",
+          name: "إنذار",
           color: "#000000",
           permissions:[]
         })
         message.guild.channels.forEach(async (channel, id) => {
           await channel.overwritePermissions(muterole, {
-            SEND_MESSAGES: false,
             ADD_REACTIONS: false
           });
         });
@@ -1540,17 +1538,16 @@ client.on('message', async message => {
         if(!message.channel.guild) return;
         message.delete()
           var command = message.content.split(" ")[0];
-    let muterole = message.guild.roles.find(`name`, "Mutedhs");
+    let muterole = message.guild.roles.find(`name`, "إنذار");
     if(!muterole){
       try{
         muterole = await message.guild.createRole({
-          name: "Muted",
+          name: "إنذار",
           color: "#000000",
           permissions:[]
         })
         message.guild.channels.forEach(async (channel, id) => {
           await channel.overwritePermissions(muterole, {
-            SEND_MESSAGES: false,
             ADD_REACTIONS: false
           });
         });
@@ -1576,6 +1573,45 @@ client.on('message', async message => {
 
 
 
+
+client.on('message', async message => {
+            if(message.content.includes('@here')){ 
+                if(message.member.hasPermission("MANAGE_GUILD")) return;
+        if(!message.channel.guild) return;
+        message.delete()
+          var command = message.content.split(" ")[0];
+    let muterole = message.guild.roles.find(`name`, "إنذار");
+    if(!muterole){
+      try{
+        muterole = await message.guild.createRole({
+          name: "إنذار",
+          color: "#000000",
+          permissions:[]
+        })
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            ADD_REACTIONS: false
+          });
+        });
+      }catch(e){
+        console.log(e.stack);
+      }
+    }
+           if(!message.channel.guild) return message.reply('** This command only for servers**');
+     message.member.addRole(muterole);
+    const embed500 = new Discord.RichEmbed()
+      .setTitle("إنذار")
+            .addField(`**إرسال منشن للكل في شات**` , `**ملاحظة:اخر مرة ترسل منشن للكل او سوف نتوجه لإجرائات ثانية**`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL)
+        .setFooter(`${message.guild.name} `)
+     message.channel.send(embed500)
+     message.author.send('`لا ترسل منشن مرة اخرى`');
+   
+       
+    }
+})
 
 
 
