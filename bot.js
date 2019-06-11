@@ -702,7 +702,7 @@ client.on('message', async message => {
 
 
 client.on('message', async message => {
-            if(message.content.includes('#رتبة')){ 
+            if(message.content.includes('$setrole')){ 
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
         if(!message.channel.guild) return;
         message.delete()
@@ -717,6 +717,7 @@ client.on('message', async message => {
         })
         message.guild.channels.forEach(async (channel, id) => {
           await channel.overwritePermissions(muterole, {
+            ADD_REACTIONS: false
           });
         });
       }catch(e){
