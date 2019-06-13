@@ -72,36 +72,7 @@ client.on('ready',  () => {
 client.on('guildMemberAdd', member =>{
     member.addRole(member.guild.roles.find(x => x.name === 'SM_RP'), "Auto-Role")
 });
-                  
-
  
-
-
-client.on('message', message => {
-   if (message.content === "#roll 1") {
-  message.channel.sendMessage(Math.floor(Math.random() * 25));
-    }
-});
- 
-client.on('message', message => {
-   if (message.content === "#roll 2") {
-  message.channel.sendMessage(Math.floor(Math.random() * 50));
-    }
-});
- 
-client.on('message', message => {
-   if (message.content === "#roll 3") {
-  message.channel.sendMessage(Math.floor(Math.random() * 75));
-    }
-});
- 
-client.on('message', message => {
-   if (message.content === "#roll 4") {
-  message.channel.sendMessage(Math.floor(Math.random() * 100));
-    }
-});
-
-
 
 const zead = [
    '*** انا اسمي مريم ***',
