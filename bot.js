@@ -44,7 +44,7 @@ client.on('ready', () => {
   console.log('╚[════════════════════════════════════]╝')
   console.log('')
   console.log('╔[════════════]╗')
-  console.log(' Wsu Is Online')
+  console.log(' Wsu Isline')
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
